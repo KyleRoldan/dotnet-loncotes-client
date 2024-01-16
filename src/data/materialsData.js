@@ -16,3 +16,11 @@ export const createMaterial = (material) => {
     body: JSON.stringify(material),
   }).then((res) => res.json());
 };
+
+export const softDeleteMaterial = (id, updatedData) => {
+  return fetch(`${_apiUrl}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: updatedData,
+  }).then((res) => res.json());
+};
